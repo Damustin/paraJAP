@@ -8,60 +8,128 @@
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  
   <style>
-    body {
-      background-color: rgb(0, 69, 138);
-    }
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-    #container {
-      background-color: rgb(17, 26, 23);
-      border-style: double;
-      margin: auto;
-      width: 50%;
-      border: 3px  rgb(61, 39, 5);
-      padding: 10px;
-      text-align: center;
-      border-radius: 10px;
-    }
-    #inicio {background-color: rgb(68, 167, 85);
-     padding: 10px; width: 50%;margin:auto; border: 10px;display: flex; justify-content: center; border-style:initial;}
-     #imail{
-      border-radius: 7px;
-     }
-     #contraseña{
-      border-radius: 7px;
-     }
-     #inicio{
-      border-radius: 10px;
-     }
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(27deg, #34495e 50%,#2c3e50 50%);
+}
+
+.form-body {
+    width: 400px;
+    min-width: 300px;
+    border-radius: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: solid 1px #2980b9;
+    margin: 10px;
+}
+
+.form-body img {
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+}
+
+.text {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.form-body input {
+    display: block;
+    margin: auto;
+    height: 40px;
+    width: 75%;
+    padding-left: 10px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: transparent;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-body input[type="password"] {
+    margin-top: 20px;
+}
+
+::placeholder {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, .596);
+}
+
+.form-body input:hover {
+    transition: .5s;
+    border: 1px solid #2980b9;
+    color: #2498db;
+}
+
+.form-body button {
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    height: 40px;
+    width: 78%;
+    background: transparent;
+    color: #b9c4c6;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid #2980b9;
+    transition:  all .5s ease;
+    
+}
+
+.form-body button:hover {
+    color: #d5dbdd;
+    border: 2px solid #3498db;
+    background:linear-gradient(#34495e,#2c3e50);
+}
+    
   </style>
 </head>
 
-<body>
-  <main class="mt-5">
-    <div id="container">
-      <div>
-        <input type="email" name="emailusuario" id="imail" placeholder="email">
-      </div>
-      <div>
-        <input type="password" name="contraseña" id="contraseña" placeholder="contraseña">
-      </div>
-    </div>
-    <div id="elboton">
+<body >
+    <div class="form-body">
+        <img src="img/img_perfil.png" alt="user-login">
+        <form class="login-form">
+     <input type="email" name="emailusuario" id="imail" placeholder="email">
+    <input type="password" name="contraseña" id="contraseña" placeholder="contraseña">
       <button id="inicio" type="button"> Iniciar secion </button>
+    </form>
+
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+          2022</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
     </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
-        2022</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
+ 
+
   <script src="js/login.js"></script>
 </body>
 

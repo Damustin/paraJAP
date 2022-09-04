@@ -12,3 +12,10 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+
+
+    
+document.getElementById("nombredeusuario").innerHTML = (localStorage.getItem("username"))
+console.log(localStorage.getItem("username"))
+
+
