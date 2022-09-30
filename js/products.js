@@ -4,6 +4,11 @@ let maxcost = undefined;
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
 const ORDER_BY_PROD_COUNT = "Cant.";
+let C101ARRAY = [];
+function setproductID(id) {
+    localStorage.setItem("productID", id);
+    window.location = "product-info.html"
+}
 
 //devuelve un objeto con 2 propiedades status y data
 function getJaSONData(url) {
@@ -75,7 +80,7 @@ function MostrarAutos(array) {
 
 
         htmlContentToAppend += `
-        <div onclick="setCatID(${auto.id})" class="list-group-item list-group-item-action cursor-active">
+        <div onclick="setproductID(${auto.id})" class="list-group-item list-group-item-action cursor-active">
             <div class="row">
                 <div class="col-3">
                     <img src="${auto.image}" alt="imagen.auto" class="img-thumbnail">
@@ -99,7 +104,9 @@ function MostrarAutos(array) {
 
 
 
-let C101ARRAY = [];
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     getJaSONData(miobj).then(result => {
         if (result.status == "ok") {
