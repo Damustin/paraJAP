@@ -39,3 +39,16 @@ let getJSONData = function(url){
         return result;
     });
 }
+function nameuserandbuton(){
+  document.getElementById("nombredeusuario").innerHTML =`
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      ${(localStorage.getItem("username"))}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="carrito.html">Mi Carrito</a></li>
+      <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
+      <li><a class="dropdown-item" href="index.html">Cerrar sesion</a></li>
+    </ul>
+  </div>`;}
+  nameuserandbuton()

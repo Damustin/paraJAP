@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
             C101ARRAY = result.data.products;
             MostrarAutos(C101ARRAY)
         }
+        nameuserandbuton()
     }
 
 )})
