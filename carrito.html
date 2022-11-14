@@ -15,51 +15,57 @@
       width: 100;
       height: 100;
     }
+
+    #envioscontainer {
+      border: 1px solid black;
+      margin: 50px;
+    }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" class="parausername" href="" id="nombredeusuario"> </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
   <main>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" class="parausername" href="" id="nombredeusuario"> </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="text-center p-4">
       <h1>Carrito de compras</h1>
       <p class="lead">Articulos que quieres comprar.</p>
     </div>
     <section class="row">
-      <div class="col" id="imgforcarr"></div>
-      <div class="col" id="namesforcarr">
-        <h2>Nombres</h2>
+      <div class="col-2" id="imgforcarr"></div>
+      <div class="col-2" id="namesforcarr">
+        <h2>Nombre</h2>
       </div>
-      <div class="col" id="costoforcarr">
+      <div class="col-2" id="costoforcarr">
         <h2>Costo</h2>
       </div>
-      <div class="col" id="cantidad">
+      <div class="col-2" id="cantidad">
         <h2>Cantidad</h2>
       </div>
-      <div class="col" id="subtotal">
+      <div class="col-2" id="subtotal">
         <h2>Sub.Total</h2>
       </div>
       <hr>
@@ -69,40 +75,114 @@
     <div id="container-carrito">
 
     </div>
-    ¿
-      <div class="container mt-5">
-        <h2> Envío</h2>
-        <div class="form-check ms-3 mt-3">
-          <input type="radio" id="premium" name="tipodeenvio" value="premium">
-          <label class="form-check-label" for="premium">Premium 2 a 5 días (15%)</label>
-        </div>
-        <div class="form-check ms-3">
-          <input type="radio" id="express" name="tipodeenvio" value="express">
-          <label class="form-check-label" for="express">Express 5 a 8 días (7%)</label>
-        </div>
-        <div class="form-check ms-3">
-          <input type="radio" id="standard" name="tipodeenvio" value="standard">
-          <label class="form-check-label" for="standard">Standard 12 a 15 días (5%)</label>
-        </div>
-        <div>
-          <h3>Dirección</h3>
-          <div>
-            <div>
-              <input type="text" aria-label="calle principal" class="form-control" placeholder="calle principal">
-            </div>
-            <div>
-              <input type="text" aria-label="numero" class="form-control" placeholder="numero de puerta">
-            </div>
-            <div>
-              <input type="text" aria-label="esquina" class="form-control" placeholder="esquina">
-            </div>
+  <form class="row g-3 needs-validation" novalidate id="formulario">
+    <div id="listenerenvios" class="container mt-5 form-check">
+      <h2> Envío</h2>
+      <div class="form-check ms-3 mt-3">
+        <input type="radio" class="form-check-input" id="premium" name="radioenvio" value="premium" required>
+        <label class="form-check-label" for="premium">Premium 2 a 5 días (15%)</label>
+      </div>
+      <div class="form-check ms-3">
+        <input type="radio" class="form-check-input" id="express" name="radioenvio" value="express" required>
+        <label class="form-check-label" for="express">Express 5 a 8 días (7%)</label>
+      </div>
+      <div class="form-check ms-3">
+        <input type="radio"  class="form-check-input" id="standard" name="radioenvio" value="standard" required>
+        <label class="form-check-label" for="standard">Standard 12 a 15 días (5%)</label>
+      </div>
+    </div>
+        
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">ciudad</label>
+          <input type="text" class="form-control" id="validationCustom03" required>
+          <div class="invalid-feedback">
+            Debe ingresar una ciudad.
           </div>
         </div>
-    </main>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">calle principal</label>
+          <input type="text" class="form-control" id="validationCustom03" required>
+          
+          <div class="invalid-feedback">
+           ingrese su calle principal
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Numero de puerta</label>
+          <input type="text" class="form-control" id="validationCustom05" required>
+          <div class="invalid-feedback">
+            ingrese un numero de puerta
+          </div>
+        </div>
+
+    <div id="envioscontainer" class="row text-center container">
+      <div id="envioscontainer2">
+        <H2 class="col-6">Costos:</H2>
+        <p id="totalproductos" class="col-2">Productos:</p>
+        <p id="productosmasenvio" class="col-2 ">Por envio: </p>
+        <p id="enviomastotal" class="col-2">Total:</p>
+      </div>
+    </div>
+
+    <div>
+
+      <button type="button" class="btn btn-primary" style="width: 100%;" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
+        Eliga un metodo de pago!!
+      </button>
+      <div class="col-12 mt-2">
+        <button class="btn btn-primary" type="submit" style="width: 100%;">Finalizar compra</button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Pagar con</h1>
+            </div>
+            <div class="modal-body justify-content-between form-check">
+              <div id="tarjetoption">
+                <input type="radio" class="form-check-input" name="opciondepago" id="tarjetadecredito" required>
+                <label for="tarjetadecredito">Tarjeta de credito</label>
+                <input type="text" class="form-control" placeholder="Numero de tarjeta" id="tarj">
+                <div class="invalid-feedback"> Ingrese un numweo sw tarjeta</div>
+                <input type="text" class="form-control" placeholder="Codigo de seguridad" id="tarj1">
+                <div class="invalid-feedback"> Ingrese el codigo de seguridad</div>
+                <input type="text" class="form-control" placeholder="Vencimiento mm/aa" id="tarj2">
+                <div class="invalid-feedback">Ingrese la fecha de vencimiento</div>
+              </div>
+              <hr>
+              <div id="transferenciabancariaoption">
+                <input type="radio" name="opciondepago" class="form-check-input" id="cuentabancaria" required>
+                <label for="cuentabancaria">Transferencia bancaria</label>
+                <input type="text" placeholder="Nro de cuenta" id="acountbank" class="form-control">
+                <div class="invalid-feedback">ingrese un numero de cuenta</div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+ </form>
+ <div id="liveAlertPlaceholder"></div>
+
+
+
+
+
+
+
+
 
 
     <footer class="text-muted">
-      <div class="container">
+      <div class="container">s
         <p class="float-end">
           <a href="#">Volver arriba</a>
         </p>
@@ -113,9 +193,9 @@
       </div>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
-
     <script src="js/init.js"></script>
     <script src="js/carrito.js"></script>
+  </main>
 </body>
 
 </html>

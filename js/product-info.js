@@ -99,14 +99,16 @@ function showproducts(array) {
     if (localStorage.getItem("carrito")) {
       cart = JSON.parse(localStorage.getItem("carrito"))
       
+      
 
       if (cart.some(articulo => articulo.id == producto.id)) {
-        prompt("se agrego a tu carrito")
-        producto.cantidad ++
-       
-
+ 
+ 
+        alert("Ya se encuentra en tu carrito")
+        
       }
       else {
+        producto.cantidad = 1;
      
         cart.push(producto);
         localStorage.setItem("carrito", JSON.stringify(cart))
@@ -114,6 +116,7 @@ function showproducts(array) {
     }
 
     else {
+      producto.cantidad = 1;
      
       cart.push(producto)
       localStorage.setItem("carrito", JSON.stringify(cart))
